@@ -1,0 +1,42 @@
+POST http://localhost:4000/create-order2
+Content-Type: application/json
+
+{
+    "intent": "CAPTURE",
+    "purchase_units": [
+        {
+            "amount": {
+                "currency_code": "USD",
+                "value": "105.70"
+            }
+        }
+    ],
+    "application_context": {
+        "brand_name": "PLURALCURSOS.com",
+        "landing_page": "NO_PREFERENCE",
+        "user_action": "PAY_NOW",
+        "return_url": "http://localhost:4000/capture-order",
+        "cancel_url": "http://localhost:4000/cancel-payment"
+    }
+}
+### order original
+POST http://localhost:4000/create-order
+Content-Type: application/x-www-form-urlencoded
+{
+    "intent": "CAPTURE",
+    "purchase_units": [
+        {
+            "amount": {
+                "currency_code": "USD",
+                "value": "150"
+            }
+        }
+    ],
+    "application_context": {
+        "brand_name": "PLURALCURSOS.com",
+        "landing_page": "NO_PREFERENCE",
+        "user_action": "PAY_NOW",
+        "return_url": "http://localhost:4000/capture-order",
+        "cancel_url": "http://localhost:4000/cancel-payment"
+    }
+}
